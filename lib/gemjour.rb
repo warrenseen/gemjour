@@ -1,9 +1,11 @@
 $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
-require "dnssd"
+require 'net/dns/mdns-sd'
 require "set"
 require "gemjour/version"
+
+DNSSD = Net::DNS::MDNSSD
 
 Thread.abort_on_exception = true
 
