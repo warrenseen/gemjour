@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.1.1}
   s.summary = %q{Advertise, list, and install gems over Bonjour.}
 
-  s.add_dependency(%q<dnssd>, [">= 0.6.0"])
+  s.add_dependency(%q<net-mdns>, [">= 0.4.0"])
 end
