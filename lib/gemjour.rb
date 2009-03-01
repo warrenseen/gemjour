@@ -131,10 +131,9 @@ show <server>
   def self.serve(name="", port=PORT)
     name = ENV['USER'] if name.empty?
 
-    tr = DNSSD::TextRecord.new
+    tr = Hash.new
     tr['description'] = "#{name}'s gem server"
-    
-    DNSSD.register(name, SERVICE, "local", port, tr.encode) do |reply|
+    DNSSD.register(name, SERVICE, "local", port, tr) do |reply|
       puts "Serving gems under name '#{name}'..."
     end
 
